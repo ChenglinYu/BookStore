@@ -1,21 +1,21 @@
 package dao;
 
-import java.util.List;
-
 import domain.Order;
+
+import java.util.List;
 
 public interface OrderDao {
 
-	void add(Order order);
+    void add(Order order);
 
-	Order find(String id);
+    Order find(String id);
 
-	List<Order> getAll(boolean state);
+    List<Order> getAll(boolean state);
 
-	void update(Order order);
+    void update(Order order);
 
-	List<Order> getAll(boolean state, String userid);
+    List<Order> getAll(boolean state, String userid);
 
-	List<Order> getAllOrder(String userid);
+    List<Order> getAllOrder(String userid);
 
 }

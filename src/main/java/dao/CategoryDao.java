@@ -1,15 +1,15 @@
 package dao;
 
-import java.util.List;
-
 import domain.Category;
+
+import java.util.List;
 
 public interface CategoryDao {
 
-	public abstract void add(Category category);
+    public abstract void add(Category category);
 
-	public abstract Category find(String id);
+    public abstract Category find(String id);
 
-	public abstract List<Category> getAll();
+    public abstract List<Category> getAll();
 
 }
