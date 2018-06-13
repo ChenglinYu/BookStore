@@ -217,42 +217,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="content_right-box">
 				<div class="col-md-8">
-					<div class="grid1">
-						<h5>书名</h5>
-						<div class="view view-first">
-							<img src="images/pic1.jpg" class="img-responsive" alt=""/>
-							<a href="single.html"><div class="mask">
-								<h3>查看详情</h3>
-								<p>---------</p>
-								<h4>加入购物车</h4>
-							</div></a>
-						</div>
-						<h6>价格</h6>
-						<h6>作者</h6>
-					</div>
-					<div class="grid1 box4">
-						<h5>书名加购物车</h5>
-						<div class="view view-first">
-							<img src="images/pic2.jpg" class="img-responsive" alt=""/>
-							<a href="single.html"><div class="mask mask1">
-								<h3>查看详情</h3>
-								<p>---------</p>
-								<h4>加入购物车</h4>
-							</div></a>
-						</div>
-						<h6>价格</h6>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<a href="single.html">
-						<div class="grid2">
+					<c:forEach var="book" items="${page.list }">
+						<div class="grid1">
+							<h5>${book.name }</h5>
 							<div class="view view-first">
-								<img src="images/pic3.jpg" class="img-responsive" alt=""/>
-								<h5>书名加作者</h5>
-								<h6>价格</h6>
+									<%--TODO：显示书籍图片--%>
+								<%--<img src="${pageContext.request.contextPath }/images/${book.image}" class="img-responsive" alt=""/>--%>
+									<img src="images/pic1.jpg" class="img-responsive" alt=""/>
+									<a href="${pageContext.request.contextPath }/client/BuyServlet?bookid=${book.id}">
+									<div class="mask">
+										<h3>查看详情</h3>
+										<p>---------</p>
+										<h4>加入购物车</h4>
+									</div>
+								</a>
 							</div>
+							<h6>作者：${book.author }</h6>
+							<h6>售价：${book.price }</h6>
+
 						</div>
-					</a>
+					</c:forEach>
+				</div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>

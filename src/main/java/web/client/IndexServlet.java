@@ -33,7 +33,8 @@ public class IndexServlet extends HttpServlet {
         request.setAttribute("page", page);
 
         //TODO: update to new front-end template
-        request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
+//        request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
     }
 
     public void listBookWithCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
