@@ -45,7 +45,11 @@ public class IndexServlet extends HttpServlet {
         String pagenum = request.getParameter("pagenum");
         Page page = service.getBookPageData(pagenum, category_id);
         request.setAttribute("page", page);
-        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
+
+        //TODO: body_new.jsp
+//        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
+
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
