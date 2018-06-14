@@ -67,7 +67,6 @@
 					<div class="box_content_center">
 						<div class="menu_box_list">
 							<ul>
-								<%--TODO: body_new.jsp & 注册与登陆的跳转--%>
 								<li><a href="../index.jsp">首页</a></li>
 								<li><a href="login_new.jsp">登录</a></li>
 								<li><a href="register_new.jsp">注册</a></li>
