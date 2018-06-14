@@ -5,15 +5,15 @@
   <head>  
     <title>前台首页</title>
   </head>
-  
+
   <%--<frameset rows="17%,*">--%>
   	<%--<frame src="${pageContext.request.contextPath }/client/head.jsp" name="head">--%>
   	<%--<frame src="${pageContext.request.contextPath }/client/IndexServlet?method=getAll" name="body">--%>
   <%--</frameset>--%>
 
   <%--TODO--%>
-  <frameset rows="10%,*">
-      <frame src="${pageContext.request.contextPath }/client/head.jsp" name="head">
+  <frameset rows="100%,*">
+      <%--<frame src="${pageContext.request.contextPath }/client/head.jsp" name="head">--%>
       <frame src="${pageContext.request.contextPath }/client/IndexServlet?method=getAll" name="body">
   </frameset>
 

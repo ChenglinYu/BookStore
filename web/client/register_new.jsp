@@ -45,19 +45,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 
-<%@include file="head_new.jsp"%>
-
 <div class="content_top">
 	<div class="container">
-		<!--左侧的菜单栏（分类列表）-->
-		<%@include file="category_new.jsp"%>
-
-		<%--商品--%>
-		<%@include file="books_new.jsp"%>
+		<%--注册界面--%>
+		<div class="col-md-9 content_right">
+			<div class="dreamcrub">
+				<ul class="breadcrumbs">
+					<li class="women">
+						登录
+					</li>
+				</ul>
+				<ul class="previous">
+					<li><a href="index.html">返回上一页</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="register">
+				<div class="col-md-6 login-right">
+					<h3>注册用户</h3>
+					<p>如果你已有账户，请登录.</p>
+					<form action="${pageContext.request.contextPath }/client/RegisterServlet" method="post">
+						<div>
+							<span>用户名<label>*</label></span>
+							<input type="text" name="username">
+						</div>
+						<div>
+							<span>密码<label>*</label></span>
+							<input type="text" name="password">
+						</div>
+						<div>
+							<span>电话</span>
+							<input type="text" name="phone">
+						</div>
+						<div>
+							<span>手机</span>
+							<input type="text" name="cellphone">
+						</div>
+						<div>
+							<span>邮箱</span>
+							<input type="text" name="email">
+						</div>
+						<div>
+							<span>住址</span>
+							<input type="text" name="address">
+						</div>
+						<input type="submit" value="注册">
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
 	</div>
 </div>
-
-<%@include file="footer_new.jsp"%>
 
 </body>
 

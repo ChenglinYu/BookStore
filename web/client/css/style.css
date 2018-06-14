@@ -1657,9 +1657,9 @@ ul.clients {
   min-height: 250px;
 }
 }
-@media (max-width:920px){
+@media (max-width:92px){
 .index-banner {
-  min-height: 500px;
+  min-height: 50px;
 }
 .wmuSlider.example1 {
   min-height: 545px !important;
