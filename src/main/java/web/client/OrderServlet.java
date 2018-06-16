@@ -26,7 +26,7 @@ public class OrderServlet extends HttpServlet {
             BusinessServiceImpl service = new BusinessServiceImpl();
             service.createOrder(cart, user);
             request.setAttribute("message", "订单已生成");
-            request.getSession().removeAttribute("cart");//清空购物车，这是我自己加上去的，因为点购买后，如果不清空购物车，前端点击查看购物车又出现了
+            request.getSession().removeAttribute("cart");
             request.getRequestDispatcher("/message.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();

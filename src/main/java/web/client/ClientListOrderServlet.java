@@ -1,6 +1,8 @@
 package web.client;
 
+import domain.Category;
 import domain.Order;
+import domain.Page;
 import service.impl.BusinessServiceImpl;
 
 import javax.servlet.ServletException;
@@ -18,7 +20,16 @@ public class ClientListOrderServlet extends HttpServlet {
         BusinessServiceImpl service = new BusinessServiceImpl();
         List<Order> orders = service.clientListOrder(userid);
         request.setAttribute("orders", orders);
-        request.getRequestDispatcher("/client/clientlistorder.jsp").forward(request, response);
+
+        //TODO: 显示订单
+//        request.getRequestDispatcher("/client/clientlistorder.jsp").forward(request, response);
+        List<Category> categories = service.getAllCategory();
+        request.setAttribute("categories", categories);
+        String pagenum = request.getParameter("pagenum");
+        Page page = service.getBookPageData(pagenum);
+        request.setAttribute("page", page);
+        request.getRequestDispatcher("/client/order_new.jsp").forward(request, response);
+
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
