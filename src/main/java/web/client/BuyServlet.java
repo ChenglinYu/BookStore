@@ -2,6 +2,8 @@ package web.client;
 
 import domain.Book;
 import domain.Cart;
+import domain.Category;
+import domain.Page;
 import service.impl.BusinessServiceImpl;
 
 import javax.servlet.ServletException;
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class BuyServlet extends HttpServlet {
 
@@ -24,7 +27,15 @@ public class BuyServlet extends HttpServlet {
                 request.getSession().setAttribute("cart", cart);
             }
             service.buyBook(cart, book);
-            request.getRequestDispatcher("/client/listcart.jsp").forward(request, response);
+
+            //TODO:修改购买成功后显示的页面
+            List<Category> categories = service.getAllCategory();
+            request.setAttribute("categories", categories);
+            String pagenum = request.getParameter("pagenum");
+            Page page = service.getBookPageData(pagenum);
+            request.setAttribute("page", page);
+            request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
+
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("message", "购买失败");
@@ -37,5 +48,16 @@ public class BuyServlet extends HttpServlet {
 
         doGet(request, response);
     }
+//
+//    public void getAll(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        BusinessServiceImpl service = new BusinessServiceImpl();
+//        List<Category> categories = service.getAllCategory();
+//        request.setAttribute("categories", categories);
+//        String pagenum = request.getParameter("pagenum");
+//        Page page = service.getBookPageData(pagenum);
+//        request.setAttribute("page", page);
+//        request.getRequestDispatcher("/client/cart_new.jsp").forward(request, response);
+//    }
 
 }

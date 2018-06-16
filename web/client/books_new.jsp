@@ -27,7 +27,7 @@
 						</a>
 					</div>
 					<h6>作者：${book.author }</h6>
-					<h6>售价：${book.price }</h6>
+					<h6>售价：¥ ${book.price }</h6>
 
 				</div>
 			</c:forEach>

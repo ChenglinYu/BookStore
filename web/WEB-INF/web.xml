@@ -74,7 +74,10 @@
     <servlet-name>ClientOrderDetailServlet</servlet-name>
     <servlet-class>web.client.ClientOrderDetailServlet</servlet-class>
   </servlet>
-
+  <servlet>
+    <servlet-name>ListCartServlet</servlet-name>
+    <servlet-class>web.client.ListCartServlet</servlet-class>
+  </servlet>
 
 
 
@@ -140,5 +143,9 @@
   <servlet-mapping>
     <servlet-name>ClientOrderDetailServlet</servlet-name>
     <url-pattern>/client/ClientOrderDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListCartServlet</servlet-name>
+    <url-pattern>/client/ListCartServlet</url-pattern>
   </servlet-mapping>
 </web-app>

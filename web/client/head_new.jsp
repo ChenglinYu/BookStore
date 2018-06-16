@@ -1,6 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
-<%--TODO:登陆与注册--%>
 <div class="index-banner">
 	<div class="container">
 		<div class="header_top">
@@ -11,50 +10,44 @@
 			<%--购物车--%>
 			<div class="header-bottom-right">
 				<ul class="icon1 sub-icon1 profile_img">
+
+					<%--TODO：购物车按钮的角标--%>
 					<li><a class="active-icon c1" href="#">购物车 </a><div class="rate">3</div>
 						<ul class="sub-icon1 list">
 							<h3>最近添加</h3>
 							<div class="shopping_cart">
-								<div class="cart_box">
-									<div class="message">
-										<div class="alert-close"> </div>
-										<div class="list_img"><img src="images/1.jpg" class="img-responsive" alt=""/></div>
-										<div class="list_desc"><h4><a href="#">书名</a></h4>数量 x<span class="actual">
-		                             价格</span></div>
-										<div class="clearfix"></div>
+								<c:forEach var="me" items="${cart.map }">
+									<div class="cart_box">
+										<div class="message">
+											<div class="alert-close"> </div>
+											<div class="list_img"><img src="${me.value.book.image}" class="img-responsive" alt=""/></div>
+											<div class="list_desc"><h4><a href="#">${me.value.book.name }</a></h4>${me.value.quantity } x<span class="actual">
+													¥ ${me.value.price }</span></div>
+											<div class="clearfix"></div>
+										</div>
 									</div>
-								</div>
-								<div class="cart_box">
-									<div class="message1">
-										<div class="alert-close1"> </div>
-										<div class="list_img"><img src="images/2.jpg" class="img-responsive" alt=""/></div>
-										<div class="list_desc"><h4><a href="#">书名</a></h4>数量 x<span class="actual">
-		                             价格</span></div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
-								<div class="cart_box1">
-									<div class="message2">
-										<div class="alert-close2"> </div>
-										<div class="list_img"><img src="images/3.jpg" class="img-responsive" alt=""/></div>
-										<div class="list_desc"><h4><a href="#">书名</a></h4>数量 x<span class="actual">
-		                             价格</span></div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
+								</c:forEach>
 							</div>
 							<div class="total">
 								<div class="total_left">共计 : </div>
-								<div class="total_right">总价</div>
+								<div class="total_right">¥ ${cart.price }</div>
 								<div class="clearfix"> </div>
 							</div>
 							<div class="login_buttons">
-								<div class="check_button"><a href="checkout.html">查看购物车</a></div>
-								<div class="login_button"><a href="login.html">登录</a></div>
+								<div class="check_button"><a href="${pageContext.request.contextPath }/client/ListCartServlet">查看购物车</a></div>
 								<div class="clearfix"></div>
 							</div>
 							<div class="clearfix"></div>
 						</ul>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+
+			<%--查看订单--%>
+			<div class="header-bottom-right">
+				<ul class="icon1 sub-icon1 profile_img">
+					<li><a class="active-icon c1" href="${pageContext.request.contextPath }/client/ClientListOrderServlet?userid=${user.id}">您的订单 </a>
 					</li>
 				</ul>
 				<div class="clearfix"></div>
