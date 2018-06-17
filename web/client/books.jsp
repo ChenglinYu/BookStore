@@ -12,23 +12,25 @@
     <div class="content_right-box">
         <div class="col-md-8">
             <c:forEach var="book" items="${page.list }">
-                <div class="grid1">
-                    <h5>${book.name }</h5>
+                <div class="grid1 box7">
+                    <h3>${book.name }</h3>
+                        ${book.author}&nbsp;著
                     <div class="view view-first">
-                            <%--TODO：显示书籍图片--%>
-                            <%--<img src="${pageContext.request.contextPath }/images/${book.image}" class="img-responsive" alt=""/>--%>
-                        <img src="images/pic1.jpg" class="img-responsive" alt=""/>
+                        <img src="${pageContext.request.contextPath }/images/${book.image}"
+                             class="img-responsive" alt="" width="200px" height="30px"/>
                         <a href="${pageContext.request.contextPath }/client/BuyServlet?bookid=${book.id}">
                             <div class="mask">
-                                <h3>查看详情</h3>
-                                <p>---------</p>
+                                <h5>&nbsp;</h5>
                                 <h4>加入购物车</h4>
+                                <h5>&nbsp;</h5>
                             </div>
                         </a>
                     </div>
-                    <h6>作者：${book.author }</h6>
-                    <h6>售价：¥ ${book.price }</h6>
-
+                    <p>
+                        ${book.description}
+                    </p>
+                    <br>
+                    <h5>售价：<span class="actual">¥ ${book.price }</span></h5>
                 </div>
             </c:forEach>
         </div>

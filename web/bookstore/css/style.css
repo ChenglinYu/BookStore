@@ -32,17 +32,18 @@ body a {
 }
 
 .index-banner {
-    background: url(../images/banner.png) no-repeat center top;
+    background: url(../images/close.png) no-repeat center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    min-height: 1100px;
+    /*min-height: 110px;*/
+    max-height: 110px;
 }
 
 .sales {
-    background: url(../images/banner.png) no-repeat center top;
+    background: url(../images/close.png) no-repeat center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2086,6 +2087,8 @@ p.cart a {
 
     .box7 img {
         display: inline-block;
+        max-height: 100%;
+        max-width: 100%;
     }
 
     .login-left {

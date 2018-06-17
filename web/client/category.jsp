@@ -13,6 +13,7 @@
             </ul>
         </li>
     </ul>
+
     <!--initiate accordion-->
     <script type="text/javascript">
         $(function () {

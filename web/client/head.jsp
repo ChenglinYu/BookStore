@@ -4,7 +4,7 @@
     <div class="container">
         <div class="header_top">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt=""/></a>
+                <a href="../index.jsp"><img src="images/logo.png" alt=""/></a>
             </div>
 
             <%--菜单栏--%>
@@ -81,11 +81,18 @@
                                     <div class="cart_box">
                                         <div class="message">
                                             <div class="alert-close"></div>
-                                            <div class="list_img"><img src="${me.value.book.image}"
+                                            <div class="list_img"><img src="${pageContext.request.contextPath }/images/${me.value.book.image}"
                                                                        class="img-responsive" alt=""/></div>
-                                            <div class="list_desc"><h4><a href="#">${me.value.book.name }</a>
-                                            </h4>${me.value.quantity } x<span class="actual">
-													¥ ${me.value.price }</span></div>
+                                            <div class="list_desc">
+                                                <h4><a href="#">${me.value.book.name }</a></h4>
+                                                    <%--${me.value.quantity } x<span class="actual">--%>
+													<%--¥ ${me.value.price }</span>--%>
+                                                <h6>
+                                                    数量：<span class="actual">${me.value.quantity}</span>
+                                                <br>
+                                                    单价：<span class="actual">¥ ${me.value.price / me.value.quantity}</span>
+                                                </h6>
+                                            </div>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
@@ -125,19 +132,22 @@
     <div class="wmuSlider example1">
         <article style="position: absolute; width: 100%; opacity: 0;">
             <div class="banner-wrap">
-                <img style="100%" src="images/banner1.jpg"/>
-            </div>
-        </article>
-        <article style="position: absolute; width: 100%; opacity: 0;">
-            <div class="banner-wrap">
                 <h1>Lorem Ipsum.</h1>
+                <img style="100%" src="images/xbanner1.jpg"/>
             </div>
         </article>
-        <article style="position: absolute; width: 100%; opacity: 0;">
-            <div class="banner-wrap">
-                <h1>Adpising adit.</h1>
-            </div>
-        </article>
+        <%--<article style="position: absolute; width: 100%; opacity: 0;">--%>
+            <%--<div class="banner-wrap">--%>
+                <%--<h1>Lorem Ipsum.</h1>--%>
+                <%--<img style="100%" src="images/xbanner2.jpg"/>--%>
+            <%--</div>--%>
+        <%--</article>--%>
+        <%--<article style="position: absolute; width: 100%; opacity: 0;">--%>
+            <%--<div class="banner-wrap">--%>
+                <%--&lt;%&ndash;<h1>Adpising adit.</h1>&ndash;%&gt;--%>
+                <%--<img style="100%" src="images/xbanner3.jpg"/>--%>
+            <%--</div>--%>
+        <%--</article>--%>
     </div>
     <script src="js/jquery.wmuSlider.js"></script>
     <script>

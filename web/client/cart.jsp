@@ -73,11 +73,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="cart_box">
                         <div class="message">
                             <div class="alert-close"></div>
-                            <div class="list_img"><img src="${me.value.book.image}" class="img-responsive" alt=""/>
+                            <div class="list_img"><img
+                                    src="${pageContext.request.contextPath }/images/${me.value.book.image}"
+                                    class="img-responsive" alt=""/>
                             </div>
-                            <div class="list_desc"><h4><a href="#">${me.value.book.name }</a></h4>${me.value.quantity }
-                                x<span class="actual">
-													¥ ${me.value.price }</span></div>
+                            <div class="list_desc">
+                                <h3><a href="">${me.value.book.name }</a></h3>
+                                <h4>${me.value.book.author}&nbsp;著</h4>
+                                <br>
+                                <p>
+                                        ${me.value.book.description}
+                                </p>
+                                <br>
+                                <p>
+                                    数量：<span class="actual">${me.value.quantity}</span>
+                                    单价：<span class="actual">¥ ${me.value.price / me.value.quantity}</span>
+                                </p>
+                            </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
