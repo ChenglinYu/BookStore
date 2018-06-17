@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <c:forEach var="me" items="${cart.map }">
                     <div class="cart_box">
                         <div class="message">
-                            <div class="alert-close"></div>
+                            <%--<div class="alert-close"></div>--%>
                             <div class="list_img"><img
                                     src="${pageContext.request.contextPath }/images/${me.value.book.image}"
                                     class="img-responsive" alt=""/>

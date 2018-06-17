@@ -3,8 +3,11 @@
 <!--左侧的菜单栏（分类列表）-->
 <div class="col-md-3">
     <ul class="menu1">
-        <li class="item1"><a href="#" class="">分类列表<img class="arrow-img" src="images/arrow.png" alt=""/> </a>
-            <ul class="cute" style="display: none; overflow: hidden;">
+        <li class="item1">
+            <a href="#" class="">
+                分类列表<img class="arrow-img" src="images/arrow.png" alt=""/>
+            </a>
+            <ul class="cute" style="display: list-item; overflow: visible;">
                 <c:forEach var="category" items="${categories }">
                     <li class="subitem1">
                         <a href="${pageContext.request.contextPath }/client/IndexServlet?method=listBookWithCategory&category_id=${category.id}">${category.name }</a>

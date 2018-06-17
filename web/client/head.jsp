@@ -71,22 +71,20 @@
             <div class="header-bottom-right">
                 <ul class="icon1 sub-icon1 profile_img">
 
-                    <%--TODO：购物车按钮的角标--%>
                     <li><a class="active-icon c1" href="#">购物车 </a>
-                        <div class="rate">3</div>
+                        <c:if test="${cart.map != null}">
+                            <div class="rate">${cart.map.size()}</div>
+                        </c:if>
                         <ul class="sub-icon1 list">
                             <h3>最近添加</h3>
                             <div class="shopping_cart">
                                 <c:forEach var="me" items="${cart.map }">
                                     <div class="cart_box">
                                         <div class="message">
-                                            <div class="alert-close"></div>
                                             <div class="list_img"><img src="${pageContext.request.contextPath }/images/${me.value.book.image}"
                                                                        class="img-responsive" alt=""/></div>
                                             <div class="list_desc">
                                                 <h4><a href="#">${me.value.book.name }</a></h4>
-                                                    <%--${me.value.quantity } x<span class="actual">--%>
-													<%--¥ ${me.value.price }</span>--%>
                                                 <h6>
                                                     数量：<span class="actual">${me.value.quantity}</span>
                                                 <br>
@@ -132,22 +130,25 @@
     <div class="wmuSlider example1">
         <article style="position: absolute; width: 100%; opacity: 0;">
             <div class="banner-wrap">
-                <h1>Lorem Ipsum.</h1>
-                <img style="100%" src="images/xbanner1.jpg"/>
+                <br>
+                <img src="images/xbanner4.jpg"/>
+                <br><br><br>
+                <img src="images/xbanner0.png" width="85%"/>
             </div>
         </article>
-        <%--<article style="position: absolute; width: 100%; opacity: 0;">--%>
-            <%--<div class="banner-wrap">--%>
-                <%--<h1>Lorem Ipsum.</h1>--%>
-                <%--<img style="100%" src="images/xbanner2.jpg"/>--%>
-            <%--</div>--%>
-        <%--</article>--%>
-        <%--<article style="position: absolute; width: 100%; opacity: 0;">--%>
-            <%--<div class="banner-wrap">--%>
-                <%--&lt;%&ndash;<h1>Adpising adit.</h1>&ndash;%&gt;--%>
-                <%--<img style="100%" src="images/xbanner3.jpg"/>--%>
-            <%--</div>--%>
-        <%--</article>--%>
+        <article style="position: absolute; width: 100%; opacity: 0;">
+            <div class="banner-wrap">
+                <br>
+                <img src="images/xbanner7.png" width="90%"/>
+            </div>
+        </article>
+        <article style="position: absolute; width: 100%; opacity: 0;">
+            <div class="banner-wrap">
+                <br><br><br>
+                <img src="images/xbanner8.png" width="90%"/>
+            </div>
+        </article>
+
     </div>
     <script src="js/jquery.wmuSlider.js"></script>
     <script>

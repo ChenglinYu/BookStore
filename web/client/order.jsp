@@ -72,7 +72,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <c:forEach var="order" items="${orders }">
                     <div class="cart_box">
                         <div class="message">
-                            <div class="alert-close"></div>
                             <div class="list_desc">
                                 <h4><a href="#">订单号：${order.id }</a></h4>
                                 订单时间：${order.ordertime}

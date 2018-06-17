@@ -46,16 +46,4 @@ public class BuyServlet extends HttpServlet {
 
         doGet(request, response);
     }
-//
-//    public void getAll(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        BusinessServiceImpl service = new BusinessServiceImpl();
-//        List<Category> categories = service.getAllCategory();
-//        request.setAttribute("categories", categories);
-//        String pagenum = request.getParameter("pagenum");
-//        Page page = service.getBookPageData(pagenum);
-//        request.setAttribute("page", page);
-//        request.getRequestDispatcher("/client/cart.jsp").forward(request, response);
-//    }
-
 }

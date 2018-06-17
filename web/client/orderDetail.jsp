@@ -97,14 +97,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <c:forEach var="orderitem" items="${order.orderitems }">
                     <div class="cart_box">
                         <div class="message">
-                            <div class="alert-close"></div>
+                            <div class="list_img"><img
+                                    src="${pageContext.request.contextPath }/images/${orderitem.book.image}"
+                                    class="img-responsive" alt=""/>
+                            </div>
                             <div class="list_desc">
-                                <h4>${orderitem.book.name}</h4>${orderitem.quantity} x<span class="actual">
-													¥ ${orderitem.price}</span>
+                                <h3><a href="">${orderitem.book.name }</a></h3>
+                                <h4>${orderitem.book.author}&nbsp;著</h4>
+                                <br>
+                                <p>
+                                        ${orderitem.book.description}
+                                </p>
+                                <br>
+                                <p>
+                                    数量：<span class="actual">${orderitem.quantity}</span>
+                                    单价：<span class="actual">¥ ${orderitem.price / orderitem.quantity}</span>
+                                </p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
+
                 </c:forEach>
 
                 <div class="login_buttons">
