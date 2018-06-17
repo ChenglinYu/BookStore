@@ -21,14 +21,12 @@ public class ClientListOrderServlet extends HttpServlet {
         List<Order> orders = service.clientListOrder(userid);
         request.setAttribute("orders", orders);
 
-        //TODO: 显示订单
-//        request.getRequestDispatcher("/client/clientlistorder.jsp").forward(request, response);
         List<Category> categories = service.getAllCategory();
         request.setAttribute("categories", categories);
         String pagenum = request.getParameter("pagenum");
         Page page = service.getBookPageData(pagenum);
         request.setAttribute("page", page);
-        request.getRequestDispatcher("/client/order_new.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/order.jsp").forward(request, response);
 
     }
 

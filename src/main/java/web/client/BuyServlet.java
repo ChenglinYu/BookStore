@@ -27,14 +27,12 @@ public class BuyServlet extends HttpServlet {
                 request.getSession().setAttribute("cart", cart);
             }
             service.buyBook(cart, book);
-
-            //TODO:修改购买成功后显示的页面
             List<Category> categories = service.getAllCategory();
             request.setAttribute("categories", categories);
             String pagenum = request.getParameter("pagenum");
             Page page = service.getBookPageData(pagenum);
             request.setAttribute("page", page);
-            request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
+            request.getRequestDispatcher("/client/body.jsp").forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,7 +55,7 @@ public class BuyServlet extends HttpServlet {
 //        String pagenum = request.getParameter("pagenum");
 //        Page page = service.getBookPageData(pagenum);
 //        request.setAttribute("page", page);
-//        request.getRequestDispatcher("/client/cart_new.jsp").forward(request, response);
+//        request.getRequestDispatcher("/client/cart.jsp").forward(request, response);
 //    }
 
 }

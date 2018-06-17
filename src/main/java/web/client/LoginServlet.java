@@ -26,15 +26,13 @@ public class LoginServlet extends HttpServlet {
             return;
         }
         request.getSession().setAttribute("user", user);
-//        request.getRequestDispatcher("/client/head.jsp").forward(request, response);
 
-        //TODO:修改登录后显示的页面
         List<Category> categories = service.getAllCategory();
         request.setAttribute("categories", categories);
         String pagenum = request.getParameter("pagenum");
         Page page = service.getBookPageData(pagenum);
         request.setAttribute("page", page);
-        request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)

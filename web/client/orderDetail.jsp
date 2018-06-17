@@ -50,12 +50,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 
-<%@include file="head_new.jsp" %>
+<%@include file="head.jsp" %>
 
 <div class="content_top">
     <div class="container">
         <!--左侧的菜单栏（分类列表）-->
-        <%@include file="category_new.jsp" %>
+        <%@include file="category.jsp" %>
 
         <%--订单详情--%>
         <div class="col-md-9 content_right">
@@ -123,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 
-<%@include file="footer_new.jsp" %>
+<%@include file="footer.jsp" %>
 
 </body>
 

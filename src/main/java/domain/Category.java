@@ -2,7 +2,7 @@ package domain;
 
 public class Category {
     /*
-	 create table category
+     create table category
 	 (
 		id varchar(40) primary key,
 		name varchar(100) not null unique,

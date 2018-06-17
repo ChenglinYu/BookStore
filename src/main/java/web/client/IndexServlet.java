@@ -32,9 +32,7 @@ public class IndexServlet extends HttpServlet {
         Page page = service.getBookPageData(pagenum);
         request.setAttribute("page", page);
 
-        //TODO: body_new.jsp
-//        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
-        request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
     }
 
     public void listBookWithCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,9 +44,7 @@ public class IndexServlet extends HttpServlet {
         Page page = service.getBookPageData(pagenum, category_id);
         request.setAttribute("page", page);
 
-        //TODO: body_new.jsp
-//        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
-        request.getRequestDispatcher("/client/body_new.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/body.jsp").forward(request, response);
 
     }
 

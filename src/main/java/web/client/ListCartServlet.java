@@ -23,6 +23,6 @@ public class ListCartServlet extends HttpServlet {
         Page page = service.getBookPageData(pagenum);
         request.setAttribute("page", page);
 
-        request.getRequestDispatcher("/client/cart_new.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/cart.jsp").forward(request, response);
     }
 }

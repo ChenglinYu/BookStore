@@ -2,7 +2,7 @@ package domain;
 
 public class Book {
     /*
-	 * create table book
+     * create table book
 	   (
 	  		id varchar(40) primary key,
 	  		name varchar(100) not null unique,

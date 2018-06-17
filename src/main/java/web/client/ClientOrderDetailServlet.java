@@ -20,16 +20,13 @@ public class ClientOrderDetailServlet extends HttpServlet {
         BusinessServiceImpl service = new BusinessServiceImpl();
         Order order = service.findOrder(orderid);
         request.setAttribute("order", order);
-//        request.getRequestDispatcher("/client/clientorderdetail.jsp").forward(request, response);
 
-
-        //TODO: 显示订单详情
         List<Category> categories = service.getAllCategory();
         request.setAttribute("categories", categories);
         String pagenum = request.getParameter("pagenum");
         Page page = service.getBookPageData(pagenum);
         request.setAttribute("page", page);
-        request.getRequestDispatcher("/client/orderDetail_new.jsp").forward(request, response);
+        request.getRequestDispatcher("/client/orderDetail.jsp").forward(request, response);
 
     }
 

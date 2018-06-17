@@ -1,54 +1,69 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>  
-    <title>首页体</title>
-  </head>
-  
-  <body style="text-align:center;">
-    <div id="content" style="margin:0 auto;width:840px;">
-    	<div id="category" style="float:left; width:200px; border:1px solid red; text-align:left; height:300px;"> 
-    		分类列表：
-    		<ul>		
-	    		<c:forEach var="category" items="${categories }">
-	    			<li>
-	    				<a href="${pageContext.request.contextPath }/client/IndexServlet?method=listBookWithCategory&category_id=${category.id}">${category.name }</a>
-	    			</li>
-	    		</c:forEach>
-    		</ul>	
-    	</div>
-    	<div id="bookandpage" style="float:left; margin-left:30px;">   		
-    		<div id="books">
-    			<c:forEach var="book" items="${page.list }">
-    				<div id="book" style="height:150; margin-top:20px;">
-    					<div id="image" style="float:left;">
-    						<img src="${pageContext.request.contextPath }/images/${book.image}" height=150 width=100>
-    					</div>
-    					<div id="bookinfo" style="float:left; text-align:left;">
-    						<ul>
-    							<li>${book.name }</li>
-    							<li>作者：${book.author }</li>
-    							<li>售价：${book.price }</li>
-    							<li>
-    								<a href="${pageContext.request.contextPath }/client/BuyServlet?bookid=${book.id}">加入购物车</a>
-    							</li>
-    						</ul>
-    					</div>
-    				</div>
-    				<div style="clear:both"></div><!-- 做div浮动后，为了不影响后续页面的显示，在这里清楚浮动效果 -->
-    			</c:forEach>
-    		</div>
-    		<div style="clear:both"></div><!-- 做div浮动后，为了不影响后续页面的显示，在这里清楚浮动效果 -->
-    		<div id="page" style="margin-top:20px; text-align:center;">
-    			当前第[${page.pagenum }]页 &nbsp;&nbsp;
-			    <c:forEach var="pagenum" begin="${page.startpage }" end="${page.endpage }">
-			    	[<a href="${pageContext.request.contextPath }/client/IndexServlet?method=${param.method }&pagenum=${pagenum}&category_id=${param.category_id}">${pagenum }</a>]
-			    </c:forEach>
-			    &nbsp;&nbsp;
-			    总共[${page.totalpage }]页，共[${page.totalrecord }]条记录
-    		</div>
-    	</div>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Suity Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close').on('click', function (c) {
+            $('.message').fadeOut('slow', function (c) {
+                $('.message').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close1').on('click', function (c) {
+            $('.message1').fadeOut('slow', function (c) {
+                $('.message1').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close2').on('click', function (c) {
+            $('.message2').fadeOut('slow', function (c) {
+                $('.message2').remove();
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+
+<%@include file="head.jsp" %>
+
+<div class="content_top">
+    <div class="container">
+        <!--左侧的菜单栏（分类列表）-->
+        <%@include file="category.jsp" %>
+
+        <%--商品--%>
+        <%@include file="books.jsp" %>
     </div>
-  </body>
+</div>
+
+<%@include file="footer.jsp" %>
+
+</body>
+
 </html>
