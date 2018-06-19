@@ -27,6 +27,7 @@ public class BuyServlet extends HttpServlet {
                 request.getSession().setAttribute("cart", cart);
             }
             service.buyBook(cart, book);
+
             List<Category> categories = service.getAllCategory();
             request.setAttribute("categories", categories);
             String pagenum = request.getParameter("pagenum");
